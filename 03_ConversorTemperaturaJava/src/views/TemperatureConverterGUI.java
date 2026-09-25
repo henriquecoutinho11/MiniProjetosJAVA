@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JOptionPane;
 
 import utils.Converter;
 
@@ -136,7 +137,11 @@ public class TemperatureConverterGUI extends JFrame implements ActionListener {
 
             } catch (NumberFormatException ex) {
                 // Tratamento caso o usuario digite letras ou símbolos em vez de números
-                lblResult.setText("Valor inválido!");
+                JOptionPane.showMessageDialog(this, "Valor inválido!","Erro",0);
+            }catch (IllegalArgumentException ex){
+                JOptionPane.showMessageDialog(this, ex.getMessage(),"Erro",0);
+            }catch (Exception ex){
+                JOptionPane.showMessageDialog(this, "Erro","Erro",0);
             }
         }
         if (e.getSource() == btnInvert) {

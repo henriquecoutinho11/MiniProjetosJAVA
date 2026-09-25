@@ -54,7 +54,4 @@ public class TextFile {
     public String toString() {
         return "";
     }
-
-    
-
 }
